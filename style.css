@@ -23,7 +23,7 @@ body {
 }
 
 /* ==========================================================================
-   2. CABECERA (SITE HEADER)
+   2. CABECERA 
    ========================================================================== */
 .site-header {
     max-width: 1200px;
@@ -121,19 +121,14 @@ body {
 /* LA IMAGEN DE FONDO */
 .hero_nueva_temporada-img {
     position: absolute;
-    /* Se independiza del flujo y flota al fondo */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Hace que la imagen llene el espacio sin deformarse */
     object-position: center;
-    /* Centra el foco de la imagen */
     z-index: 1;
-    /* Se queda en la capa más baja */
     opacity: 0.35;
-    /* Un tono oscuro para que el texto blanco destaque y sea legible */
 }
 
 /* CAPA DE TEXTO Y FORMULARIO */
@@ -333,7 +328,7 @@ body {
 }
 
 /* ==========================================================================
-   6. FICHA DE ANIME DESTACADO (CHAINSAW MAN)
+   6. FICHA DE ANIME DESTACADO 
    ========================================================================== */
 .anime-showcase-card {
     background-color: #131518;
