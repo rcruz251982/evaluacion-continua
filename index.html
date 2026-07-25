@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OtakuVault — Tu portal definitivo al universo anime</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CABECERA -->
+    <header class="site-header">
+        <div class="logo-container">
+            <div class="logo-icon">ov</div>
+            <span class="logo-text">Otaku<span>Vault</span></span>
+        </div>
+        <nav class="main-nav">
+            <a href="#" class="nav-link active">Inicio</a>
+            <a href="#" class="nav-link">Catálogo</a>
+            <a href="#" class="nav-link">Merch</a>
+            <a href="#" class="nav-link">Comunidad</a>
+        </nav>
+        <button class="btn-login" id="btn-login-header">Iniciar Sesión</button>
+    </header>
+
+    <main class="main-container">
+
+        <!-- SECCIÓN HERO -->
+        <section class="hero_seccion">
+            <!-- Imagen de fondo del Hero -->
+            <img src="img/hero-content.png" alt="OtakuVault Hero" class="hero_nueva_temporada-img">
+
+            <!-- Capa con el contenido flotante -->
+            <div class="hero_content-hero">
+                <span class="badge-new">NUEVO • TEMPORADA 2026</span>
+                <h1 class="hero-title">Tu portal definitivo al universo anime</h1>
+                <p class="subtitle">
+                    OtakuVault reúne streaming premium, estrenos simultáneos con Japón y merchandising oficial en un
+                    solo lugar. Accede sin límites y colecciona lo que amas.
+                </p>
+
+                <!-- Tarjeta de Acceso integrada -->
+                <div class="access-card" id="tarjeta-acceso">
+                    <h2 class="access-title">VALIDAR ACCESO</h2>
+                    <form class="access-form">
+                        <div class="form-row">
+                            <input type="text" id="input-usuario" placeholder="Nombre de usuario" class="form-input" required>
+                            <input type="text" id="input-edad" placeholder="Edad" class="form-input input-short" required>
+                        </div>
+                        <button type="button" id="btn-validar" class="btn-primary">Validar Acceso</button>
+                        <p id="alertas-validacion"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN LOS MEJORES ANIMES -->
+        <section class="section-container">
+            <div class="section-header">
+                <div>
+                    <span class="section-tag">CATÁLOGO IMPRESCINDIBLE</span>
+                    <h2 class="section-title">Los Mejores Animes</h2>
+                </div>
+                <a href="#" class="catalog-link">Ver todo el catálogo →</a>
+            </div>
+
+            <div class="anime-list-container">
+                
+                <!-- FICHA 1: ONE PIECE (Todo Público) -->
+                <div class="anime-showcase-card filter-all" id="ficha-anime-1">
+                    <div class="showcase-img-container">
+                        <span class="sub-dub-badge">SUB - DUB</span>
+                        <img src="img/one-piece.png" alt="One Piece" class="showcase-img">
+                    </div>
+                    <div class="showcase-details">
+                        <h3 class="anime-title">One Piece</h3>
+                        <div class="tags-container">
+                            <span class="tag">Aventura</span>
+                            <span class="tag">Shonen</span>
+                            <span class="tag" style="color: #2ed573;">TP</span>
+                            <span class="tag-episodes">• 1100+ episodios</span>
+                        </div>
+                        <p class="anime-desc">
+                            Monkey D. Luffy se niega a que nadie se interponga en su camino para convertirse en el Rey de los Piratas. Zarpa junto a su tripulación en busca del legendario tesoro, el One Piece.
+                        </p>
+                        <div class="feedback-container">
+                            <span class="feedback-title">¿QUÉ TE PARECE?</span>
+                            <div class="feedback-buttons">
+                                <button class="btn-like">Me gusta 👍 <span class="counter">0</span></button>
+                                <button class="btn-dislike">No me gusta 👎 <span class="counter">0</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FICHA 2: NARUTO (Todo Público) -->
+                <div class="anime-showcase-card filter-all" id="ficha-anime-2">
+                    <div class="showcase-img-container">
+                        <span class="sub-dub-badge">DOBLADO</span>
+                        <img src="img/naruto-shippuden.png" alt="Naruto" class="showcase-img">
+                    </div>
+                    <div class="showcase-details">
+                        <h3 class="anime-title">Naruto Shippuden</h3>
+                        <div class="tags-container">
+                            <span class="tag">Ninja</span>
+                            <span class="tag">Acción</span>
+                            <span class="tag" style="color: #2ed573;">TP</span>
+                            <span class="tag-episodes">• 500 episodios</span>
+                        </div>
+                        <p class="anime-desc">
+                            Naruto Uzumaki regresa a la Aldea de la Hoja tras años de entrenamiento. Su objetivo sigue intacto: convertirse en Hokage y traer de vuelta a su mejor amigo, Sasuke Uchiha.
+                        </p>
+                        <div class="feedback-container">
+                            <span class="feedback-title">¿QUÉ TE PARECE?</span>
+                            <div class="feedback-buttons">
+                                <button class="btn-like">Me gusta 👍 <span class="counter">0</span></button>
+                                <button class="btn-dislike">No me gusta 👎 <span class="counter">0</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FICHA 3: SOLO LEVELING (+16) -->
+                <div class="anime-showcase-card filter-plus16" id="ficha-anime-3">
+                    <div class="showcase-img-container">
+                        <span class="sub-dub-badge">SUB</span>
+                        <img src="img/solo-leveling.png" alt="Solo Leveling" class="showcase-img">
+                    </div>
+                    <div class="showcase-details">
+                        <h3 class="anime-title">Solo Leveling</h3>
+                        <div class="tags-container">
+                            <span class="tag">Fantasía Oscura</span>
+                            <span class="tag-age">+16</span>
+                            <span class="tag-episodes">• 12 episodios</span>
+                        </div>
+                        <p class="anime-desc">
+                            En un mundo lleno de portales y monstruos, el cazador de rango E Sung Jinwoo recibe una segunda oportunidad en una mazmorra doble, obteniendo la habilidad única de "subir de nivel".
+                        </p>
+                        <div class="feedback-container">
+                            <span class="feedback-title">¿QUÉ TE PARECE?</span>
+                            <div class="feedback-buttons">
+                                <button class="btn-like">Me gusta 👍 <span class="counter">0</span></button>
+                                <button class="btn-dislike">No me gusta 👎 <span class="counter">0</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FICHA 4: KIMETSU NO YAIBA (+16) -->
+                <div class="anime-showcase-card filter-plus16" id="ficha-anime-4">
+                    <div class="showcase-img-container">
+                        <span class="sub-dub-badge">SUB - DUB</span>
+                        <img src="img/kimetsu.png" alt="Kimetsu no Yaiba" class="showcase-img">
+                    </div>
+                    <div class="showcase-details">
+                        <h3 class="anime-title">Kimetsu no Yaiba</h3>
+                        <div class="tags-container">
+                            <span class="tag">Fantasía</span>
+                            <span class="tag">Acción</span>
+                            <span class="tag-age">+16</span>
+                            <span class="tag-episodes">• 55 episodios</span>
+                        </div>
+                        <p class="anime-desc">
+                            Tanjiro Kamado emprende un viaje arriesgado para buscar una cura para su hermana Nezuko, transformada en demonio, y vengar la muerte de su familia uniéndose a los Cazadores de Demonios.
+                        </p>
+                        <div class="feedback-container">
+                            <span class="feedback-title">¿QUÉ TE PARECE?</span>
+                            <div class="feedback-buttons">
+                                <button class="btn-like">Me gusta 👍 <span class="counter">0</span></button>
+                                <button class="btn-dislike">No me gusta 👎 <span class="counter">0</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FICHA 5: BLEACH (+16) -->
+                <div class="anime-showcase-card filter-plus16" id="ficha-anime-5">
+                    <div class="showcase-img-container">
+                        <span class="sub-dub-badge">SUB</span>
+                        <img src="img/bleach.png" alt="Bleach" class="showcase-img">
+                    </div>
+                    <div class="showcase-details">
+                        <h3 class="anime-title">Bleach: Thousand-Year Blood War</h3>
+                        <div class="tags-container">
+                            <span class="tag">Shinigami</span>
+                            <span class="tag">Acción</span>
+                            <span class="tag-age">+16</span>
+                            <span class="tag-episodes">• 26 episodios</span>
+                        </div>
+                        <p class="anime-desc">
+                            La Sociedad de Almas se enfrenta a su mayor amenaza cuando el imperio invisible de los Quincy, liderado por Yhwach, declara la guerra total a los Shinigami. Ichigo Kurosaki empuña su espada una vez más.
+                        </p>
+                        <div class="feedback-container">
+                            <span class="feedback-title">¿QUÉ TE PARECE?</span>
+                            <div class="feedback-buttons">
+                                <button class="btn-like">Me gusta 👍 <span class="counter">0</span></button>
+                                <button class="btn-dislike">No me gusta 👎 <span class="counter">0</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN MERCHANDISING -->
+        <section class="section-container">
+            <span class="section-tag">MERCHANDISING OFICIAL</span>
+            <h2 class="section-title margin-bottom">Figuras Coleccionables</h2>
+
+            <div class="merch-grid">
+                <!-- Contenedor de productos a la izquierda -->
+                <div class="products-container">
+                    
+                    <!-- FIGURA 1: MONKEY D. LUFFY - GEAR 5 (De One Piece) -->
+                    <div class="product-card" id="figura-1">
+                        <div class="product-img-side">
+                            <img src="img/luffy_gear_5.png" alt="Figura Luffy Gear 5 " class="product-img">
+                        </div>
+                        <div class="product-info-side">
+                            <span class="badge-limited">EDICIÓN COLECCIONISTA</span>
+                            <h3 class="product-title">Luffy Gear 5 — Escala 1/4 (45cm)</h3>
+                            <p class="product-subtitle">Impresionante escultura de resina que captura la transformación más icónica del Capitán de los Sombreros de Paja con efectos de nubes dinámicas.</p>
+                            <table class="price-table">
+                                <tr>
+                                    <td>Precio del artículo</td>
+                                    <td class="price-val"><span id="precio-figura-1">289.00</span> €</td>
+                                </tr>
+                                <tr>
+                                    <td>Coste de reserva</td>
+                                    <td class="price-val"><span>40.00</span> €</td>
+                                </tr>
+                                <tr class="discount-row">
+                                    <td>Descuento aplicable (Miembro)</td>
+                                    <td class="price-val">- <span>28.90</span> €</td>
+                                </tr>
+                                <tr>
+                                    <td>Gastos de envío </td>
+                                    <td class="price-val"><span>15.00</span> €</td>
+                                </tr>
+                            </table>
+                            <div class="purchase-controls">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn" onclick="cambiarCantidad('figura-1', -1)">-</button>
+                                    <span class="qty-number" id="cant-figura-1">1</span>
+                                    <button class="qty-btn" onclick="cambiarCantidad('figura-1', 1)">+</button>
+                                </div>
+                                <button class="btn-primary flex-grow" id="btn-add-figura-1">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FIGURA 2: TANJIRO KAMADO - HINOKAMI KAGURA (De Kimetsu no Yaiba) -->
+                    <div class="product-card" id="figura-2">
+                        <div class="product-img-side">
+                            <img src="img/tanjiro_kamado.png" alt="Figura Tanjiro Hinokami Kagura Deluxe" class="product-img">
+                        </div>
+                        <div class="product-info-side">
+                            <span class="badge-limited" style="color: #ff4757;">¡ULTIMAS UNIDADES DISPONIBLES!</span>
+                            <h3 class="product-title">Tanjiro Kagura — Escala 1/6 Deluxe</h3>
+                            <p class="product-subtitle">Escultura dinámica con base de diorama iluminada por LED que recrea el efecto de fuego de la Danza del Dios del Fuego.</p>
+                            <table class="price-table">
+                                <tr>
+                                    <td>Precio del artículo</td>
+                                    <td class="price-val"><span id="precio-figura-2">195.50</span> €</td>
+                                </tr>
+                                <tr>
+                                    <td>Coste de reserva</td>
+                                    <td class="price-val"><span>25.00</span> €</td>
+                                </tr>
+                                <tr class="discount-row">
+                                    <td>Descuento aplicable</td>
+                                    <td class="price-val">- <span>0.00</span> €</td>
+                                </tr>
+                                <tr>
+                                    <td>Gastos de envío</td>
+                                    <td class="price-val"><span>12.00</span> €</td>
+                                </tr>
+                            </table>
+                            <div class="purchase-controls">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn" onclick="cambiarCantidad('figura-2', -1)">-</button>
+                                    <span class="qty-number" id="cant-figura-2">1</span>
+                                    <button class="qty-btn" onclick="cambiarCantidad('figura-2', 1)">+</button>
+                                </div>
+                                <button class="btn-primary flex-grow" id="btn-add-figura-2">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FIGURA 3: ICHIGO KUROSAKI - TYBW VERSION (De Bleach) -->
+                    <div class="product-card" id="figura-3">
+                        <div class="product-img-side">
+                            <img src="img/ichigo_bankai.png" alt="Figura Ichigo Kurosaki TYBW Exclusive" class="product-img">
+                        </div>
+                        <div class="product-info-side">
+                            <span class="badge-limited" style="color: #2ed573;">NUEVA EXCLUSIVA TYBW</span>
+                            <h3 class="product-title">Ichigo TYBW — Estatua 1/7</h3>
+                            <p class="product-subtitle">Estatua oficial de PVC de la colección Thousand-Year Blood War, con Ichigo empuñando su Zanpakuto dual en su forma final.</p>
+                            <table class="price-table">
+                                <tr>
+                                    <td>Precio del artículo</td>
+                                    <td class="price-val"><span id="precio-figura-3">149.99</span> €</td>
+                                </tr>
+                                <tr>
+                                    <td>Coste de reserva</td>
+                                    <td class="price-val"><span>0.00</span> €</td>
+                                </tr>
+                                <tr class="discount-row">
+                                    <td>Descuento aplicable</td>
+                                    <td class="price-val">- <span>15.00</span> €</td>
+                                </tr>
+                                <tr>
+                                    <td>Gastos de envío</td>
+                                    <td class="price-val"><span>10.00</span> €</td>
+                                </tr>
+                            </table>
+                            <div class="purchase-controls">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn" onclick="cambiarCantidad('figura-3', -1)">-</button>
+                                    <span class="qty-number" id="cant-figura-3">1</span>
+                                    <button class="qty-btn" onclick="cambiarCantidad('figura-3', 1)">+</button>
+                                </div>
+                                <button class="btn-primary flex-grow" id="btn-add-figura-3">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Tarjeta del Carrito (Fija a la derecha al hacer scroll) -->
+                <div class="-card" style="position: sticky; top: 20px;">
+                    <h3 class="cart-title">TU CARRITO</h3>
+
+                    <div class="cart-summary">
+                        <div class="summary-line">
+                            <span>Artículos de Élite</span>
+                            <span id="cart-qty">0</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Subtotal</span>
+                            <span id="cart-subtotal">0.00 €</span>
+                        </div>
+                        <div class="summary-line text-discount">
+                            <span>Descuentos Miembro</span>
+                            <span id="cart-discount">- 0.00 €</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Envío (Combinado)</span>
+                            <span id="cart-shipping">0.00 €</span>
+                        </div>
+                    </div>
+
+                    <div class="cart-total-section">
+                        <div class="total-line">
+                            <span>TOTAL A PAGAR</span>
+                            <span class="total-price" id="cart-total">0.00 €</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-secondary">Finalizar compra segura</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="site-footer">
+        <p class="footer-copy">© 2026 <strong>Otaku<span>Vault</span></strong>. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Términos</a>
+            <a href="#">Privacidad</a>
+            <a href="#">Soporte</a>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,741 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: #0b0c0e;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ENVOLTORIO PRINCIPAL */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+    flex: 1;
+}
+
+/* ==========================================================================
+   2. CABECERA (SITE HEADER)
+   ========================================================================== */
+.site-header {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    background-color: #ff6600;
+    color: #000000;
+    font-weight: 900;
+    font-size: 1.1rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    text-transform: lowercase;
+}
+
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.logo-text span {
+    color: #ff6600;
+}
+
+.main-nav {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-link {
+    color: #9ea2a8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ffffff;
+}
+
+.btn-login {
+    background-color: #ff6600;
+    color: #000000;
+    border: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-login:hover {
+    background-color: #ff7a22;
+}
+
+/* ==========================================================================
+   3. SECCIÓN HERO 
+   ========================================================================== */
+.hero_seccion {
+    position: relative;
+    /* Clave: sirve de ancla para posicionar elementos dentro */
+    width: 100%;
+    min-height: 550px;
+    /* Le da una buena altura de pantalla de cine */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centra el contenido verticalmente */
+    text-align: left;
+    padding: 60px;
+    border: 1px solid #333;
+    border-radius: 16px;
+    overflow: hidden;
+    /* Evita que la imagen se salga de las esquinas redondeadas */
+    margin: 20px 0 40px 0;
+}
+
+/* LA IMAGEN DE FONDO */
+.hero_nueva_temporada-img {
+    position: absolute;
+    /* Se independiza del flujo y flota al fondo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Hace que la imagen llene el espacio sin deformarse */
+    object-position: center;
+    /* Centra el foco de la imagen */
+    z-index: 1;
+    /* Se queda en la capa más baja */
+    opacity: 0.35;
+    /* Un tono oscuro para que el texto blanco destaque y sea legible */
+}
+
+/* CAPA DE TEXTO Y FORMULARIO */
+.hero_content-hero {
+    position: relative;
+    /* Se posiciona de forma relativa */
+    z-index: 2;
+    /* Se coloca por encima de la imagen (capa 2) */
+    max-width: 55%;
+    /* Limita el ancho para que no tape toda la imagen de la derecha */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.badge-new {
+    border: 1px solid #ff6600;
+    color: #ff6600;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* Ajustes de tipografía para el Claim superpuesto */
+.hero-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+    /* Sombra para legibilidad total */
+}
+
+.hero-title span {
+    color: #ff6600;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #e0e0e0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   4. TARJETA DE ACCESO (DENTRO DEL HERO)
+   ========================================================================== */
+.access-card {
+    background-color: #131518;
+    border: 1px solid #202329;
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.access-title {
+    font-size: 0.8rem;
+    color: #9ea2a8;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.access-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.form-input {
+    max-width: 100%;
+    background-color: #1a1d22;
+    border: 1px solid #2d3139;
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    flex:2;
+    min-width:120px;
+}
+
+.form-input::placeholder {
+    color: #5b606a;
+}
+
+#alertas-validacion {
+    color: #ff4757;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: center;
+
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #ff6600;
+}
+
+.input-short {
+    max-width: 120px;
+}
+
+.btn-primary {
+    background-color: #ff6600;
+    color: #000000;
+    border: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #ff7a22;
+}
+
+.perfil-activo h2 {
+
+    color: #ff6600;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    
+
+}
+
+.mensaje-alerta-menor {
+    color: #ff4757;
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   5. SECCIÓN COMÚN (CABECERAS DE SECCIÓN)
+   ========================================================================== */
+.section-container {
+    padding: 40px 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 25px;
+}
+
+.anime-list-container{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+
+.section-tag {
+    color: #ff6600;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+}
+
+.section-title.margin-bottom {
+    margin-bottom: 25px;
+}
+
+.catalog-link {
+    color: #9ea2a8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.catalog-link:hover {
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   6. FICHA DE ANIME DESTACADO (CHAINSAW MAN)
+   ========================================================================== */
+.anime-showcase-card {
+    background-color: #131518;
+    border: 1px solid #202329;
+    border-radius: 16px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    
+}
+
+.showcase-img-container {
+    position: relative;
+    height: 100%;
+    min-height: 320px;
+}
+
+.sub-dub-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #ff6600;
+    color: #000000;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.showcase-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.showcase-details {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.anime-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.tags-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    background-color: #1d2026;
+    border: 1px solid #2d3139;
+    color: #9ea2a8;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.tag-age {
+    background-color: #1d2026;
+    border: 1px solid #2d3139;
+    color: #ff4757;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.tag-episodes {
+    color: #5b606a;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.anime-desc {
+    color: #9ea2a8;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+.feedback-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.feedback-title {
+    font-size: 0.75rem;
+    color: #5b606a;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.feedback-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-like,
+.btn-dislike {
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.btn-like {
+    background-color: #ff6600;
+    color: #000000;
+}
+
+.btn-like:hover {
+    background-color: #ff7a22;
+}
+
+.btn-dislike {
+    background-color: #1d2026;
+    border: 1px solid #2d3139;
+    color: #ffffff;
+}
+
+.btn-dislike:hover {
+    background-color: #252932;
+}
+
+.counter {
+    font-weight: 800;
+}
+
+/* ==========================================================================
+   7. SECCIÓN MERCHANDISING Y FIGURAS
+   ========================================================================== */
+.merch-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* TARJETA DEL PRODUCTO */
+.product-card {
+    background-color: #131518;
+    border: 1px solid #202329;
+    border-radius: 16px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    min-height: 400px;
+}
+
+.product-img-side {
+    position: relative;
+    height: 100%;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.product-info-side {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.badge-limited {
+    color: #ff6600;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.product-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.product-subtitle {
+    color: #9ea2a8;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+/* TABLA DE COSTES */
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+}
+
+.price-table tr {
+    border-bottom: 1px solid #1d2026;
+}
+
+.price-table tr:last-child {
+    border-bottom: none;
+}
+
+.price-table td {
+    padding: 10px 0;
+    color: #9ea2a8;
+    font-size: 0.9rem;
+}
+
+.price-table td.price-val {
+    text-align: right;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.price-table .discount-row td {
+    color: #ff4757;
+}
+
+.price-table .discount-row td.price-val {
+    color: #ff4757;
+}
+
+/* CONTROLES DE COMPRA Y CANTIDAD */
+.purchase-controls {
+    display: flex;
+    gap: 12px;
+}
+
+.quantity-selector {
+    background-color: #1d2026;
+    border: 1px solid #2d3139;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+}
+
+.qty-btn {
+    background: none;
+    border: none;
+    color: #9ea2a8;
+    font-size: 1.1rem;
+    font-weight: bold;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.qty-btn:hover {
+    color: #ffffff;
+}
+
+.qty-number {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    width: 24px;
+    text-align: center;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+/* ==========================================================================
+   8. CARRITO DE LA COMPRA (WIDGET COMPACTO)
+   ========================================================================== */
+.cart-card {
+    background-color: #131518;
+    border: 1px solid #202329;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 380px;
+}
+
+.cart-title {
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+}
+
+.cart-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    color: #9ea2a8;
+    font-size: 0.9rem;
+}
+
+.summary-line span:last-child {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.summary-line.text-discount span:last-child {
+    color: #ff4757;
+}
+
+.cart-total-section {
+    border-top: 1px solid #1d2026;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+
+.total-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #9ea2a8;
+    font-weight: 700;
+}
+
+.total-price {
+    color: #ff6600;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.btn-secondary {
+    background: none;
+    border: 1.5px solid #ff6600;
+    color: #ff6600;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-secondary:hover {
+    background-color: #ff6600;
+    color: #000000;
+}
+
+/* ==========================================================================
+   9. SITE FOOTER
+   ========================================================================== */
+.site-footer {
+    max-width: 1200px;
+    width: 100%;
+    margin: 40px auto 0 auto;
+    padding: 30px 20px;
+    border-top: 1px solid #131518;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #5b606a;
+    font-size: 0.85rem;
+}
+
+.footer-copy strong {
+    color: #ffffff;
+}
+
+.footer-copy span {
+    color: #ff6600;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #5b606a;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
