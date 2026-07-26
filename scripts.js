@@ -173,16 +173,18 @@ let acumuladorEnvio = 0;
 
 function agregarAlCarrito(idFigura) {
     const contadorHTML = document.getElementById('cant-' + idFigura);
-    let unidades = parseInt(contadorHTML.textContent, 10);
+    let unidades = parseInt(contadorHTML.textContent, 10); // convertir texto plano a entero base 10
 
-    let producto = datosProductos[idFigura];
+    let producto = datosProductos[idFigura]; //busqueda dentro del objeto datosproducto
 
-    acumuladorArticulos += unidades;
+    acumuladorArticulos += unidades; // operamos sumando y multiplicando
     acumuladorSubtotal += producto.precio * unidades;
     acumuladorDescuento += producto.descuento * unidades;
     acumuladorEnvio += producto.envio * unidades;
 
     let totalAPagar = acumuladorSubtotal - acumuladorDescuento + acumuladorEnvio;
+
+    // inyectamos las cantidades directas y precios formateados con dos decimales
 
     document.getElementById('cart-qty').textContent = acumuladorArticulos;
     document.getElementById('cart-subtotal').textContent = acumuladorSubtotal.toFixed(2) + ' €';
