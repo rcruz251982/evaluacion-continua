@@ -31,13 +31,13 @@ const datosProductos = {
     },
     'figura-2': {
         precio: 195.50,
-        descuento: 0.00,
+        descuento: 5.00,
         envio: 12.00
     },
     'figura-3': {
         precio: 149.99,
         descuento: 15.00,
-        envio: 10.00
+        envio: 0
     }
 };
 
