@@ -46,8 +46,10 @@
                     <h2 class="access-title">VALIDAR ACCESO</h2>
                     <form class="access-form">
                         <div class="form-row">
-                            <input type="text" id="input-usuario" placeholder="Nombre de usuario" class="form-input" required>
-                            <input type="text" id="input-edad" placeholder="Edad" class="form-input input-short" required>
+                            <input type="text" id="input-usuario" placeholder="Nombre de usuario" class="form-input"
+                                required>
+                            <input type="text" id="input-edad" placeholder="Edad" class="form-input input-short"
+                                required>
                         </div>
                         <button type="button" id="btn-validar" class="btn-primary">Validar Acceso</button>
                         <p id="alertas-validacion"></p>
@@ -67,7 +69,7 @@
             </div>
 
             <div class="anime-list-container">
-                
+
                 <!-- FICHA 1: ONE PIECE (Todo Público) -->
                 <div class="anime-showcase-card filter-all" id="ficha-anime-1">
                     <div class="showcase-img-container">
@@ -83,13 +85,16 @@
                             <span class="tag-episodes">• 1100+ episodios</span>
                         </div>
                         <p class="anime-desc">
-                            Monkey D. Luffy se niega a que nadie se interponga en su camino para convertirse en el Rey de los Piratas. Zarpa junto a su tripulación en busca del legendario tesoro, el One Piece.
+                            Monkey D. Luffy se niega a que nadie se interponga en su camino para convertirse en el Rey
+                            de los Piratas. Zarpa junto a su tripulación en busca del legendario tesoro, el One Piece.
                         </p>
                         <div class="feedback-container">
                             <span class="feedback-title">¿QUÉ TE PARECE?</span>
                             <div class="feedback-buttons">
-                                <button class="btn-like">Me gusta 👍 <span class="counter">0</span></button>
-                                <button class="btn-dislike">No me gusta 👎 <span class="counter">0</span></button>
+                                <button class="btn-like" onclick="votarAnime('anime-1','like')">Me gusta 👍 <span
+                                        class="counter" id="anime-1-like">0</span></button>
+                                <button class="btn-dislike" onclick="votarAnime('anime-1','dislike')">No me gusta 👎
+                                    <span class="counter" id="anime-1-dislike">0</span></button>
                             </div>
                         </div>
                     </div>
@@ -110,13 +115,16 @@
                             <span class="tag-episodes">• 500 episodios</span>
                         </div>
                         <p class="anime-desc">
-                            Naruto Uzumaki regresa a la Aldea de la Hoja tras años de entrenamiento. Su objetivo sigue intacto: convertirse en Hokage y traer de vuelta a su mejor amigo, Sasuke Uchiha.
+                            Naruto Uzumaki regresa a la Aldea de la Hoja tras años de entrenamiento. Su objetivo sigue
+                            intacto: convertirse en Hokage y traer de vuelta a su mejor amigo, Sasuke Uchiha.
                         </p>
                         <div class="feedback-container">
                             <span class="feedback-title">¿QUÉ TE PARECE?</span>
                             <div class="feedback-buttons">
-                                <button class="btn-like">Me gusta 👍 <span class="counter">0</span></button>
-                                <button class="btn-dislike">No me gusta 👎 <span class="counter">0</span></button>
+                                <button class="btn-like" onclick="votarAnime('anime-2','like')">Me gusta 👍 <span
+                                        class="counter" id="anime-2-like">0</span></button>
+                                <button class="btn-dislike" onclick="votarAnime('anime-2','dislike')">No me gusta 👎
+                                    <span class="counter" id="anime-2-dislike">0</span></button>
                             </div>
                         </div>
                     </div>
@@ -136,13 +144,17 @@
                             <span class="tag-episodes">• 12 episodios</span>
                         </div>
                         <p class="anime-desc">
-                            En un mundo lleno de portales y monstruos, el cazador de rango E Sung Jinwoo recibe una segunda oportunidad en una mazmorra doble, obteniendo la habilidad única de "subir de nivel".
+                            En un mundo lleno de portales y monstruos, el cazador de rango E Sung Jinwoo recibe una
+                            segunda oportunidad en una mazmorra doble, obteniendo la habilidad única de "subir de
+                            nivel".
                         </p>
                         <div class="feedback-container">
                             <span class="feedback-title">¿QUÉ TE PARECE?</span>
                             <div class="feedback-buttons">
-                                <button class="btn-like">Me gusta 👍 <span class="counter">0</span></button>
-                                <button class="btn-dislike">No me gusta 👎 <span class="counter">0</span></button>
+                                <button class="btn-like" onclick="votarAnime('anime-3','like')">Me gusta 👍 <span
+                                        class="counter" id="anime-3-like">0</span></button>
+                                <button class="btn-dislike" onclick="votarAnime('anime-3','dislike')">No me gusta 👎 <span
+                                        class="counter" id="anime-3-dislike">0</span></button>
                             </div>
                         </div>
                     </div>
@@ -150,59 +162,71 @@
 
                 <!-- FICHA 4: KIMETSU NO YAIBA (+16) -->
                 <div class="anime-showcase-card filter-plus16" id="ficha-anime-4">
-                    <div class="showcase-img-container">
-                        <span class="sub-dub-badge">SUB - DUB</span>
-                        <img src="img/kimetsu.png" alt="Kimetsu no Yaiba" class="showcase-img">
-                    </div>
-                    <div class="showcase-details">
-                        <h3 class="anime-title">Kimetsu no Yaiba</h3>
-                        <div class="tags-container">
-                            <span class="tag">Fantasía</span>
-                            <span class="tag">Acción</span>
-                            <span class="tag-age">+16</span>
-                            <span class="tag-episodes">• 55 episodios</span>
-                        </div>
-                        <p class="anime-desc">
-                            Tanjiro Kamado emprende un viaje arriesgado para buscar una cura para su hermana Nezuko, transformada en demonio, y vengar la muerte de su familia uniéndose a los Cazadores de Demonios.
-                        </p>
-                        <div class="feedback-container">
-                            <span class="feedback-title">¿QUÉ TE PARECE?</span>
-                            <div class="feedback-buttons">
-                                <button class="btn-like">Me gusta 👍 <span class="counter">0</span></button>
-                                <button class="btn-dislike">No me gusta 👎 <span class="counter">0</span></button>
+                                        <div class="showcase-img-container">
+                                            <span class="sub-dub-badge">SUB - DUB</span>
+                                            <img src="img/kimetsu.png" alt="Kimetsu no Yaiba" class="showcase-img">
+                                        </div>
+                                        <div class="showcase-details">
+                                            <h3 class="anime-title">Kimetsu no Yaiba</h3>
+                                            <div class="tags-container">
+                                                <span class="tag">Fantasía</span>
+                                                <span class="tag">Acción</span>
+                                                <span class="tag-age">+16</span>
+                                                <span class="tag-episodes">• 55 episodios</span>
+                                            </div>
+                                            <p class="anime-desc">
+                                                Tanjiro Kamado emprende un viaje arriesgado para buscar una cura para su
+                                                hermana Nezuko,
+                                                transformada en demonio, y vengar la muerte de su familia uniéndose a
+                                                los Cazadores de
+                                                Demonios.
+                                            </p>
+                                            <div class="feedback-container">
+                                                <span class="feedback-title">¿QUÉ TE PARECE?</span>
+                                                <div class="feedback-buttons">
+                                                    <button class="btn-like" onclick="votarAnime('anime-4','like')">Me
+                                                        gusta 👍 <span class="counter" id="anime-4-like">0</span></button>
+                                <button class=" btn-dislike" onclick="votarAnime('anime-4','dislike')">No me gusta 👎
+                                                            <span class="counter" id="anime-4-dislike">0</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- FICHA 5: BLEACH (+16) -->
-                <div class="anime-showcase-card filter-plus16" id="ficha-anime-5">
-                    <div class="showcase-img-container">
-                        <span class="sub-dub-badge">SUB</span>
-                        <img src="img/bleach.png" alt="Bleach" class="showcase-img">
-                    </div>
-                    <div class="showcase-details">
-                        <h3 class="anime-title">Bleach: Thousand-Year Blood War</h3>
-                        <div class="tags-container">
-                            <span class="tag">Shinigami</span>
-                            <span class="tag">Acción</span>
-                            <span class="tag-age">+16</span>
-                            <span class="tag-episodes">• 26 episodios</span>
-                        </div>
-                        <p class="anime-desc">
-                            La Sociedad de Almas se enfrenta a su mayor amenaza cuando el imperio invisible de los Quincy, liderado por Yhwach, declara la guerra total a los Shinigami. Ichigo Kurosaki empuña su espada una vez más.
-                        </p>
-                        <div class="feedback-container">
-                            <span class="feedback-title">¿QUÉ TE PARECE?</span>
-                            <div class="feedback-buttons">
-                                <button class="btn-like">Me gusta 👍 <span class="counter">0</span></button>
-                                <button class="btn-dislike">No me gusta 👎 <span class="counter">0</span></button>
+                            <!-- FICHA 5: BLEACH (+16) -->
+                            <div class="anime-showcase-card filter-plus16" id="ficha-anime-5">
+                                <div class="showcase-img-container">
+                                    <span class="sub-dub-badge">SUB</span>
+                                    <img src="img/bleach.png" alt="Bleach" class="showcase-img">
+                                </div>
+                                <div class="showcase-details">
+                                    <h3 class="anime-title">Bleach: Thousand-Year Blood War</h3>
+                                    <div class="tags-container">
+                                        <span class="tag">Shinigami</span>
+                                        <span class="tag">Acción</span>
+                                        <span class="tag-age">+16</span>
+                                        <span class="tag-episodes">• 26 episodios</span>
+                                    </div>
+                                    <p class="anime-desc">
+                                        La Sociedad de Almas se enfrenta a su mayor amenaza cuando el imperio invisible
+                                        de los
+                                        Quincy, liderado por Yhwach, declara la guerra total a los Shinigami. Ichigo
+                                        Kurosaki empuña
+                                        su espada una vez más.
+                                    </p>
+                                    <div class="feedback-container">
+                                        <span class="feedback-title">¿QUÉ TE PARECE?</span>
+                                        <div class="feedback-buttons">
+                                            <button class="btn-like" onclick="votarAnime('anime-5','like')">Me gusta 👍
+                                                <span class="counter" id="anime-5-like">0</span></button>
+                                            <button class="btn-dislike" onclick="votarAnime('anime-5','dislike')">No me
+                                                gusta 👎 <span class="counter" id="anime-5-dislike">0</span></button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
+                        </div>
         </section>
 
         <!-- SECCIÓN MERCHANDISING -->
@@ -213,7 +237,7 @@
             <div class="merch-grid">
                 <!-- Contenedor de productos a la izquierda -->
                 <div class="products-container">
-                    
+
                     <!-- FIGURA 1: MONKEY D. LUFFY - GEAR 5 (De One Piece) -->
                     <div class="product-card" id="figura-1">
                         <div class="product-img-side">
@@ -222,7 +246,8 @@
                         <div class="product-info-side">
                             <span class="badge-limited">EDICIÓN COLECCIONISTA</span>
                             <h3 class="product-title">Luffy Gear 5 — Escala 1/4 (45cm)</h3>
-                            <p class="product-subtitle">Impresionante escultura de resina que captura la transformación más icónica del Capitán de los Sombreros de Paja con efectos de nubes dinámicas.</p>
+                            <p class="product-subtitle">Impresionante escultura de resina que captura la transformación
+                                más icónica del Capitán de los Sombreros de Paja con efectos de nubes dinámicas.</p>
                             <table class="price-table">
                                 <tr>
                                     <td>Precio del artículo</td>
@@ -255,12 +280,14 @@
                     <!-- FIGURA 2: TANJIRO KAMADO - HINOKAMI KAGURA (De Kimetsu no Yaiba) -->
                     <div class="product-card" id="figura-2">
                         <div class="product-img-side">
-                            <img src="img/tanjiro_kamado.png" alt="Figura Tanjiro Hinokami Kagura Deluxe" class="product-img">
+                            <img src="img/tanjiro_kamado.png" alt="Figura Tanjiro Hinokami Kagura Deluxe"
+                                class="product-img">
                         </div>
                         <div class="product-info-side">
                             <span class="badge-limited" style="color: #ff4757;">¡ULTIMAS UNIDADES DISPONIBLES!</span>
                             <h3 class="product-title">Tanjiro Kagura — Escala 1/6 Deluxe</h3>
-                            <p class="product-subtitle">Escultura dinámica con base de diorama iluminada por LED que recrea el efecto de fuego de la Danza del Dios del Fuego.</p>
+                            <p class="product-subtitle">Escultura dinámica con base de diorama iluminada por LED que
+                                recrea el efecto de fuego de la Danza del Dios del Fuego.</p>
                             <table class="price-table">
                                 <tr>
                                     <td>Precio del artículo</td>
@@ -293,12 +320,14 @@
                     <!-- FIGURA 3: ICHIGO KUROSAKI - TYBW VERSION (De Bleach) -->
                     <div class="product-card" id="figura-3">
                         <div class="product-img-side">
-                            <img src="img/ichigo_bankai.png" alt="Figura Ichigo Kurosaki TYBW Exclusive" class="product-img">
+                            <img src="img/ichigo_bankai.png" alt="Figura Ichigo Kurosaki TYBW Exclusive"
+                                class="product-img">
                         </div>
                         <div class="product-info-side">
                             <span class="badge-limited" style="color: #2ed573;">NUEVA EXCLUSIVA TYBW</span>
                             <h3 class="product-title">Ichigo TYBW — Estatua 1/7</h3>
-                            <p class="product-subtitle">Estatua oficial de PVC de la colección Thousand-Year Blood War, con Ichigo empuñando su Zanpakuto dual en su forma final.</p>
+                            <p class="product-subtitle">Estatua oficial de PVC de la colección Thousand-Year Blood War,
+                                con Ichigo empuñando su Zanpakuto dual en su forma final.</p>
                             <table class="price-table">
                                 <tr>
                                     <td>Precio del artículo</td>

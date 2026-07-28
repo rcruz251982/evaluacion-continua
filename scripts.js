@@ -1,4 +1,8 @@
 
+
+
+
+
 // declaracion y captura de elementos del DOM
 
 const tarjetaAcceso = document.getElementById('tarjeta-acceso');
@@ -20,6 +24,11 @@ let acumuladorArticulos = 0;
 let acumuladorSubtotal = 0;
 let acumuladorDescuento = 0;
 let acumuladorEnvio = 0;
+
+// variable objeto vacio para guardar los likes
+
+let registroVotos = {};
+let animesVotados = [];
 
 // Objeto datosProducto que incluye precios, descuentos y envios
 
@@ -54,11 +63,11 @@ btnLoginCabecera.addEventListener('click', function () {
             fichaAdultos[i].style.display = 'grid';
         }
 
+        vaciarCarrito()
+
 
         tarjetaAcceso.innerHTML = formularioOriginalHTML;
-       
         activarEscuchaFormulario();
-
 
 
     } else {
@@ -114,8 +123,16 @@ function validarFormulario() {
     if (nombre === '') {
         mensajeValidacion.innerHTML = "Por favor introduce algun nombre";
         return;
+    }
 
-    } else if (isNaN(edad)) {
+    const patronNombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*[a-zA-ZáéíóúÁÉÍÓÚñÑ][a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s]*$/;
+    if (!patronNombre.test(nombre)) {
+        mostrarNotificacion('⚠️ El nombre debe incluir letras (no puede ser solo números)');
+        return;
+    }
+
+
+    if (isNaN(edad)) {
         mensajeValidacion.innerHTML = "Edad necesaria para el acceso a todos los contenidos";
         return;
 
@@ -245,4 +262,71 @@ function vaciarCarrito() {
     document.getElementById('precio-figura-2').textContent = datosProductos['figura-2'].precio.toFixed(2);
     document.getElementById('precio-figura-3').textContent = datosProductos['figura-3'].precio.toFixed(2);
 
+    registroVotos = {};
+
 }
+
+// Funcion para integrar a votarAnime y poder dar estilo a la notificacion
+
+function mostrarNotificacion(mensaje) {
+
+    const aviso = document.createElement('div');
+    aviso.textContent = mensaje;
+    aviso.classList.add('alerta-submit');
+    document.body.appendChild(aviso);
+
+    setTimeout(function () {
+        aviso.remove();
+    }, 700);
+
+
+}
+
+
+// funcion para acumular likes en las fichas de anime
+
+function votarAnime(idAnime, tipoVoto) {
+
+    if (!sesionIniciada) {
+        mostrarNotificacion('⚠️ Inicia sesión para poder votar'); // Siempre que el usuario no haya iniciado sesión
+        return;
+    }
+
+
+    const votoAnterior = registroVotos[idAnime]; // Consultamos el Objeto, ¿que hay?
+
+    if (votoAnterior === tipoVoto) {
+        mostrarNotificacion('⚠️ Ya le has dado a esta opción');
+        return;
+    }
+
+    if (votoAnterior && votoAnterior !== tipoVoto) {
+        // Buscamos el contador del botón VIEJO en el HTML
+        const contadorViejoHTML = document.getElementById(`${idAnime}-${votoAnterior}`);
+        let cantidadVieja = parseInt(contadorViejoHTML.textContent, 10);
+
+        //  Le restamos 1 para quitar el voto anterior
+        cantidadVieja--;
+        contadorViejoHTML.textContent = cantidadVieja;
+
+        mostrarNotificacion('🔄 ¡Has cambiado tu voto!');
+    } else {
+        mostrarNotificacion('✅ ¡Voto registrado con éxito!');
+
+    }
+
+
+    const sumarLikes = `${idAnime}-${tipoVoto}`;
+    const contadorHTML = document.getElementById(sumarLikes);
+    let cantidadActual = parseInt(contadorHTML.textContent, 10);
+    cantidadActual++
+    contadorHTML.textContent = cantidadActual;
+
+    registroVotos[idAnime] = tipoVoto
+
+
+}
+
+
+
+
