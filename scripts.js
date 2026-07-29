@@ -147,7 +147,7 @@ function validarFormulario() {
         return;
 
     } else if (edad < 0) {
-        mensajeValidacion.innerHTML = " 🥚¡Aun no has llegado a este mundo";
+        mensajeValidacion.innerHTML = " 🥚¡Aún no has llegado a este mundo";
         return;
 
     } else if (edad < 7) {
