@@ -505,7 +505,7 @@ body {
 .products-container {
     display: flex;
     flex-direction: column;
-    gap: 10px; 
+    gap: 11px; 
 }
 .product-card {
     background-color: #131518;
