@@ -284,7 +284,7 @@ function mostrarNotificacion(mensaje) {
 
     setTimeout(function () {
         aviso.remove();
-    }, 700);
+    }, 900);
 
 
 }
