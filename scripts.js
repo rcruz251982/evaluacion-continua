@@ -120,6 +120,14 @@ function validarFormulario() {
 
 
     const nombre = inputUsuario.value.trim(); // Extraccion de nombre del campo usuario limpiando espacios
+
+    const edadTexto = inputEdad.value.trim();
+
+    if (edadTexto.includes('.') || edadTexto.includes(',')) {
+        mensajeValidacion.innerHTML = "📅 Tu cumpleaños es una vez al año, no escribas decimales";
+        return;
+    }
+
     const edad = parseInt(inputEdad.value, 10); // Extracción y Conversión de edad a numero entero
 
     if (nombre === '') {
@@ -129,7 +137,7 @@ function validarFormulario() {
 
     const patronNombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*[a-zA-ZáéíóúÁÉÍÓÚñÑ][a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s]*$/;
     if (!patronNombre.test(nombre)) {
-        mostrarNotificacion('⚠️ El nombre debe incluir letras (no puede ser solo números)');
+        mensajeValidacion.innerHTML = "⚠️ El nombre debe incluir letras (no puede ser solo números)";
         return;
     }
 
@@ -139,15 +147,15 @@ function validarFormulario() {
         return;
 
     } else if (edad < 0) {
-        mensajeValidacion.innerHTML = "🧸 ¡ERROR! Comprueba de nuevo los datos introducidos de tu edad";
+        mensajeValidacion.innerHTML = " 🥚¡Aun no has llegado a este mundo";
         return;
 
     } else if (edad < 7) {
-        mensajeValidacion.innerHTML = "🧸 Si tienes menos de 7 años, no puedes acceder a OtakuVault";
+        mensajeValidacion.innerHTML = "🧸👶 Si tienes menos de 7 años, no puedes acceder a OtakuVault";
         return;
 
-    } else if (edad > 110) { 
-        mensajeValidacion.innerHTML = "☠️ Por favor, introduce una edad válida (máximo 120 años)";
+    } else if (edad > 110) {
+        mensajeValidacion.innerHTML = "☠️ Por favor, introduce una edad válida (máximo 110 años)";
         return;
     }
 
@@ -156,7 +164,7 @@ function validarFormulario() {
         ultimoUsuario = nombre;
         ultimaEdad = edad;
 
-    } 
+    }
 
     if (edad < 16) {
         btnLoginCabecera.innerHTML = `CERRAR TU SESION ${nombre}`;
@@ -232,7 +240,7 @@ function agregarAlCarrito(idFigura) {
     acumuladorArticulos += unidades; // operamos sumando y multiplicando
     acumuladorSubtotal += producto.precio * unidades;
     acumuladorDescuento += producto.descuento * unidades;
-    acumuladorEnvio += producto.envio * unidades;
+    acumuladorEnvio = 15.00;
 
     let totalAPagar = acumuladorSubtotal - acumuladorDescuento + acumuladorEnvio;
 
@@ -284,7 +292,7 @@ function mostrarNotificacion(mensaje) {
 
     setTimeout(function () {
         aviso.remove();
-    }, 900);
+    }, 1200);
 
 
 }
