@@ -12,15 +12,15 @@
 
     <!-- CABECERA -->
     <header class="site-header">
-        <div class="logo-container">
+        <div class="logo-container" id="inicio">
             <div class="logo-icon">ov</div>
             <span class="logo-text">Otaku<span>Vault</span></span>
         </div>
         <nav class="main-nav">
-            <a href="#" class="nav-link active">Inicio</a>
-            <a href="#" class="nav-link">Catálogo</a>
-            <a href="#" class="nav-link">Merch</a>
-            <a href="#" class="nav-link">Comunidad</a>
+            <a href="#inicio" class="nav-link active">Inicio</a>
+            <a href="#seccion-animes" class="nav-link">Mejores animes</a>
+            <a href="#seccion-figuras" class="nav-link">Coleccionables</a>
+            <a href="#seccion-carrito" class="nav-link">Carrito</a>
         </nav>
         <button class="btn-login" id="btn-login-header">Iniciar Sesión</button>
     </header>
@@ -62,10 +62,10 @@
         <section class="section-container">
             <div class="section-header">
                 <div>
-                    <span class="section-tag">CATÁLOGO IMPRESCINDIBLE</span>
+                    <span class="section-tag" id="seccion-animes">CATÁLOGO IMPRESCINDIBLE</span>
                     <h2 class="section-title">Los Mejores Animes</h2>
                 </div>
-                <a href="#" class="catalog-link">Ver todo el catálogo →</a>
+                <a href="#inicio" class="catalog-link">↑ Volver al inicio</a>
             </div>
 
             <div class="anime-list-container">
@@ -153,8 +153,8 @@
                             <div class="feedback-buttons">
                                 <button class="btn-like" onclick="votarAnime('anime-3','like')">Me gusta 👍 <span
                                         class="counter" id="anime-3-like">0</span></button>
-                                <button class="btn-dislike" onclick="votarAnime('anime-3','dislike')">No me gusta 👎 <span
-                                        class="counter" id="anime-3-dislike">0</span></button>
+                                <button class="btn-dislike" onclick="votarAnime('anime-3','dislike')">No me gusta 👎
+                                    <span class="counter" id="anime-3-dislike">0</span></button>
                             </div>
                         </div>
                     </div>
@@ -162,78 +162,82 @@
 
                 <!-- FICHA 4: KIMETSU NO YAIBA (+16) -->
                 <div class="anime-showcase-card filter-plus16" id="ficha-anime-4">
-                                        <div class="showcase-img-container">
-                                            <span class="sub-dub-badge">SUB - DUB</span>
-                                            <img src="img/kimetsu.png" alt="Kimetsu no Yaiba" class="showcase-img">
-                                        </div>
-                                        <div class="showcase-details">
-                                            <h3 class="anime-title">Kimetsu no Yaiba</h3>
-                                            <div class="tags-container">
-                                                <span class="tag">Fantasía</span>
-                                                <span class="tag">Acción</span>
-                                                <span class="tag-age">+16</span>
-                                                <span class="tag-episodes">• 55 episodios</span>
-                                            </div>
-                                            <p class="anime-desc">
-                                                Tanjiro Kamado emprende un viaje arriesgado para buscar una cura para su
-                                                hermana Nezuko,
-                                                transformada en demonio, y vengar la muerte de su familia uniéndose a
-                                                los Cazadores de
-                                                Demonios.
-                                            </p>
-                                            <div class="feedback-container">
-                                                <span class="feedback-title">¿QUÉ TE PARECE?</span>
-                                                <div class="feedback-buttons">
-                                                    <button class="btn-like" onclick="votarAnime('anime-4','like')">Me
-                                                        gusta 👍 <span class="counter" id="anime-4-like">0</span></button>
-                                <button class=" btn-dislike" onclick="votarAnime('anime-4','dislike')">No me gusta 👎
-                                                            <span class="counter" id="anime-4-dislike">0</span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                            </div>
-
-                            <!-- FICHA 5: BLEACH (+16) -->
-                            <div class="anime-showcase-card filter-plus16" id="ficha-anime-5">
-                                <div class="showcase-img-container">
-                                    <span class="sub-dub-badge">SUB</span>
-                                    <img src="img/bleach.png" alt="Bleach" class="showcase-img">
-                                </div>
-                                <div class="showcase-details">
-                                    <h3 class="anime-title">Bleach: Thousand-Year Blood War</h3>
-                                    <div class="tags-container">
-                                        <span class="tag">Shinigami</span>
-                                        <span class="tag">Acción</span>
-                                        <span class="tag-age">+16</span>
-                                        <span class="tag-episodes">• 26 episodios</span>
-                                    </div>
-                                    <p class="anime-desc">
-                                        La Sociedad de Almas se enfrenta a su mayor amenaza cuando el imperio invisible
-                                        de los
-                                        Quincy, liderado por Yhwach, declara la guerra total a los Shinigami. Ichigo
-                                        Kurosaki empuña
-                                        su espada una vez más.
-                                    </p>
-                                    <div class="feedback-container">
-                                        <span class="feedback-title">¿QUÉ TE PARECE?</span>
-                                        <div class="feedback-buttons">
-                                            <button class="btn-like" onclick="votarAnime('anime-5','like')">Me gusta 👍
-                                                <span class="counter" id="anime-5-like">0</span></button>
-                                            <button class="btn-dislike" onclick="votarAnime('anime-5','dislike')">No me
-                                                gusta 👎 <span class="counter" id="anime-5-dislike">0</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                    <div class="showcase-img-container">
+                        <span class="sub-dub-badge">SUB - DUB</span>
+                        <img src="img/kimetsu.png" alt="Kimetsu no Yaiba" class="showcase-img">
+                    </div>
+                    <div class="showcase-details">
+                        <h3 class="anime-title">Kimetsu no Yaiba</h3>
+                        <div class="tags-container">
+                            <span class="tag">Fantasía</span>
+                            <span class="tag">Acción</span>
+                            <span class="tag-age">+16</span>
+                            <span class="tag-episodes">• 55 episodios</span>
                         </div>
+                        <p class="anime-desc">
+                            Tanjiro Kamado emprende un viaje arriesgado para buscar una cura para su
+                            hermana Nezuko,
+                            transformada en demonio, y vengar la muerte de su familia uniéndose a
+                            los Cazadores de
+                            Demonios.
+                        </p>
+                        <div class="feedback-container">
+                            <span class="feedback-title">¿QUÉ TE PARECE?</span>
+                            <div class="feedback-buttons">
+                                <button class="btn-like" onclick="votarAnime('anime-4','like')">Me
+                                    gusta 👍 <span class="counter" id="anime-4-like">0</span></button>
+                                <button class=" btn-dislike" onclick="votarAnime('anime-4','dislike')">No me gusta 👎
+                                    <span class="counter" id="anime-4-dislike">0</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FICHA 5: BLEACH (+16) -->
+                <div class="anime-showcase-card filter-plus16" id="ficha-anime-5">
+                    <div class="showcase-img-container">
+                        <span class="sub-dub-badge">SUB</span>
+                        <img src="img/bleach.png" alt="Bleach" class="showcase-img">
+                    </div>
+                    <div class="showcase-details">
+                        <h3 class="anime-title">Bleach: Thousand-Year Blood War</h3>
+                        <div class="tags-container">
+                            <span class="tag">Shinigami</span>
+                            <span class="tag">Acción</span>
+                            <span class="tag-age">+16</span>
+                            <span class="tag-episodes">• 26 episodios</span>
+                        </div>
+                        <p class="anime-desc">
+                            La Sociedad de Almas se enfrenta a su mayor amenaza cuando el imperio invisible
+                            de los
+                            Quincy, liderado por Yhwach, declara la guerra total a los Shinigami. Ichigo
+                            Kurosaki empuña
+                            su espada una vez más.
+                        </p>
+                        <div class="feedback-container">
+                            <span class="feedback-title">¿QUÉ TE PARECE?</span>
+                            <div class="feedback-buttons">
+                                <button class="btn-like" onclick="votarAnime('anime-5','like')">Me gusta 👍
+                                    <span class="counter" id="anime-5-like">0</span></button>
+                                <button class="btn-dislike" onclick="votarAnime('anime-5','dislike')">No me
+                                    gusta 👎 <span class="counter" id="anime-5-dislike">0</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
         <!-- SECCIÓN MERCHANDISING -->
-        <section class="section-container">
-            <span class="section-tag">MERCHANDISING OFICIAL</span>
-            <h2 class="section-title margin-bottom">Figuras Coleccionables</h2>
-
+        <section class="section-container" id="seccion-figuras">
+            <div class="section-header">
+                <div>
+                    <span class="section-tag">MERCHANDISING OFICIAL</span>
+                    <h2 class="section-title">Figuras Coleccionables</h2>
+                </div>
+                <a href="#inicio" class="catalog-link">↑ Volver al inicio</a>
+            </div>
             <div class="merch-grid">
                 <!-- Contenedor de productos a la izquierda -->
                 <div class="products-container">
@@ -263,7 +267,7 @@
                                 </tr>
                                 <tr>
                                     <td>Gastos de envío </td>
-                                    <td class="price-val"><span>0</span> €</td>
+                                    <td class="price-val"><span>15</span> €</td>
                                 </tr>
                             </table>
                             <div class="purchase-controls">
@@ -303,7 +307,7 @@
                                 </tr>
                                 <tr>
                                     <td>Gastos de envío</td>
-                                    <td class="price-val"><span>0</span> €</td>
+                                    <td class="price-val"><span>12</span> €</td>
                                 </tr>
                             </table>
                             <div class="purchase-controls">
@@ -359,8 +363,10 @@
 
                 </div>
 
+
+
                 <!-- Tarjeta del Carrito (Fija a la derecha al hacer scroll) -->
-                <div class="cart-card" style="position: sticky; top: 20px;">
+                <div class="cart-card" id="seccion-carrito" style="position: sticky; top: 20px;">
                     <h3 class="cart-title">TU CARRITO</h3>
 
                     <div class="cart-summary">
@@ -389,8 +395,9 @@
                         </div>
                     </div>
 
-                    <button class="btn-secondary">Finalizar compra segura</button>
+                    <button class="btn-secondary" id="btn-carrito">Finalizar compra segura</button>
                 </div>
+                <a href="#inicio" class="catalog-link">↑ Volver al inicio</a>
             </div>
         </section>
     </main>
@@ -399,9 +406,7 @@
     <footer class="site-footer">
         <p class="footer-copy">© 2026 <strong>Otaku<span>Vault</span></strong>. Todos los derechos reservados.</p>
         <div class="footer-links">
-            <a href="#">Términos</a>
-            <a href="#">Privacidad</a>
-            <a href="#">Soporte</a>
+            <a href="#"> Ricard Cruz Frutos UF1305</a>
         </div>
     </footer>
 

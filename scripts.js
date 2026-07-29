@@ -46,9 +46,11 @@ const datosProductos = {
     'figura-3': {
         precio: 149.99,
         descuento: 15.00,
-        envio: 0
+        envio: 10.00
     }
 };
+
+
 
 // ACTIVAR EL BOTÓN DE LA CABECERA (INICIAR / CERRAR SESIÓN)
 btnLoginCabecera.addEventListener('click', function () {
@@ -121,7 +123,7 @@ function validarFormulario() {
     const edad = parseInt(inputEdad.value, 10); // Extracción y Conversión de edad a numero entero
 
     if (nombre === '') {
-        mensajeValidacion.innerHTML = "Por favor introduce algun nombre";
+        mensajeValidacion.innerHTML = "⚠️ Por favor, introduce algun nombre";
         return;
     }
 
@@ -133,23 +135,28 @@ function validarFormulario() {
 
 
     if (isNaN(edad)) {
-        mensajeValidacion.innerHTML = "Edad necesaria para el acceso a todos los contenidos";
+        mensajeValidacion.innerHTML = "👺 Edad necesaria para el acceso a todos los contenidos";
         return;
 
     } else if (edad < 0) {
-        mensajeValidacion.innerHTML = "¡ERROR! Comprueba de nuevo los datos introducidos de tu edad";
+        mensajeValidacion.innerHTML = "🧸 ¡ERROR! Comprueba de nuevo los datos introducidos de tu edad";
         return;
 
     } else if (edad < 7) {
-        mensajeValidacion.innerHTML = "Si tienes menos de 7 años, no puedes acceder a OtakuVault";
+        mensajeValidacion.innerHTML = "🧸 Si tienes menos de 7 años, no puedes acceder a OtakuVault";
         return;
 
+    } else if (edad > 110) { 
+        mensajeValidacion.innerHTML = "☠️ Por favor, introduce una edad válida (máximo 120 años)";
+        return;
     }
+
     if (nombre !== ultimoUsuario || edad !== ultimaEdad) {
         vaciarCarrito();
         ultimoUsuario = nombre;
         ultimaEdad = edad;
-    }
+
+    } 
 
     if (edad < 16) {
         btnLoginCabecera.innerHTML = `CERRAR TU SESION ${nombre}`;
@@ -159,7 +166,7 @@ function validarFormulario() {
         }
         btnLoginCabecera.style.backgroundColor = "#1d2026";
         btnLoginCabecera.style.color = "#ffffff";
-        tarjetaAcceso.innerHTML = "<h2>¡Acceso limitado!</h2><p class='mensaje-alerta-menor'>Acceso concedido para menores de 16 años. Se ha ocultado el contenido no apto (Gore/+16).</p>";
+        tarjetaAcceso.innerHTML = "<h2>¡Acceso limitado!</h2><p class='mensaje-alerta-menor'>Acceso concedido para menores de 16 años.🎮<br> Se ha ocultado el contenido no apto (Gore/+16).</p>";
 
 
     } else { // si la edad es mayor o igual que 16 muestra todas las fichas
@@ -171,7 +178,7 @@ function validarFormulario() {
         btnLoginCabecera.innerHTML = `CERRAR TU SESION ${nombre}`;
         btnLoginCabecera.style.backgroundColor = "#1d2026";
         btnLoginCabecera.style.color = "#ffffff";
-        tarjetaAcceso.innerHTML = "<h2>¡ACCESO COMPLETADO!</h2><p class='mensaje-alerta-menor'>Distruta de todo nuestro contenido</p>";
+        tarjetaAcceso.innerHTML = "<h2>¡ACCESO COMPLETADO!</h2><p class='mensaje-alerta-menor'>Distruta de todo nuestro contenido 👑</p>";
 
 
     }
@@ -326,6 +333,20 @@ function votarAnime(idAnime, tipoVoto) {
 
 
 }
+
+document.getElementById('btn-carrito').addEventListener('click', function () {
+    //  Si el carrito está vacío, avisamos y no hacemos nada más
+    if (acumuladorArticulos === 0) {
+        mostrarNotificacion('🛒 Tu carrito está vacío. ¡Añade alguna figura primero!');
+        return;
+    }
+
+    // Si hay productos, confirmamos la compra con mensaje personalizado
+    mostrarNotificacion('📜 ¡Misión completada! Un cuervo mensajero lleva tus figuras a tu aldea 🥷');
+
+    // Vaciamos el carrito y reseteamos contadores
+    vaciarCarrito();
+});
 
 
 
