@@ -501,6 +501,12 @@ body {
 }
 
 /* TARJETA DEL PRODUCTO */
+
+.products-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
 .product-card {
     background-color: #131518;
     border: 1px solid #202329;
@@ -509,6 +515,10 @@ body {
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
     min-height: 400px;
+    
+}
+.products-container .product-card:last-child {
+    margin-bottom: 0;
 }
 
 .product-img-side {
