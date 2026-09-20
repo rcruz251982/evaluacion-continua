@@ -761,3 +761,47 @@ body {
 .footer-links a:hover {
     color: #ffffff;
 }
+
+/* ==========================================================================
+   10. Media Query Movile
+   ========================================================================== */
+
+   /* Media query rápida para móviles en vertical (< 768px) */
+@media screen and (max-width: 768px) {
+    
+    /* La cabecera se apila */
+    .site-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .main-nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* El hero pasa a una sola columna y reduce padding */
+    .hero_content-hero {
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    /* Las tarjetas de anime y merchandising se vuelven de una sola columna */
+    .anime-showcase-card,
+    .product-card {
+        grid-template-columns: 1fr;
+    }
+
+    .merch-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* El carrito sticky deja de serlo para que no tape contenido en móvil */
+    .cart-card {
+        position: static !important;
+    }
+}
